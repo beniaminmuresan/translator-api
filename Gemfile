@@ -17,9 +17,6 @@ gem 'puma', '~> 5.0'
 # Json serializer
 gem 'active_model_serializers', '~> 0.10.0'
 
-# Swagger documentation
-gem 'rswag'
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -47,6 +44,16 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # Swagger documentation
+  gem 'rswag'
+  # Rspec + useful gems for testing
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'rspec-its'
+  gem 'rspec-json_expectations'
+  gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers'
 end
 
 group :development do
