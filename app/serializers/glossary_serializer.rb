@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class GlossarySerializer < ActiveModel::Serializer
-  attributes :source_language_code, :target_language_code
+  attributes :id, :source_language_code, :target_language_code
+
+  has_many :terms
 end

@@ -7,4 +7,5 @@ class Glossary < ApplicationRecord
                                                 message: 'is not a valid language code' }
   validates :target_language_code, inclusion: { in: ACCEPTED_LANGUAGE_CODES.pluck(:code),
                                                 message: 'is not a valid language code' }
+  has_many :terms
 end

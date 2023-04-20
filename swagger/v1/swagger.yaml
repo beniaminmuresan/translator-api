@@ -50,6 +50,35 @@ paths:
           description: Successful
         '404':
           description: Not found
+  "/glossaries/{glossary_id}/terms":
+    parameters:
+    - name: glossary_id
+      in: path
+      description: glossary_id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: create term
+      tags:
+      - Terms
+      parameters: []
+      responses:
+        '201':
+          description: created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                source_term:
+                  type: string
+                target_term:
+                  type: string
+              required:
+              - source_term
+              - target_term
 servers:
 - url: http://{defaultHost}
   variables:

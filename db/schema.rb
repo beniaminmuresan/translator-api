@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_19_194858) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_183041) do
   create_table "glossaries", force: :cascade do |t|
     t.string "source_language_code"
     t.string "target_language_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.string "source_term"
+    t.string "target_term"
+    t.integer "glossary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["glossary_id"], name: "index_terms_on_glossary_id"
   end
 
 end
