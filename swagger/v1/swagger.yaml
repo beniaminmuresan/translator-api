@@ -1,0 +1,57 @@
+---
+openapi: 3.0.1
+info:
+  title: Translator API V1
+  version: v1
+paths:
+  "/glossaries":
+    get:
+      summary: list glossaries
+      tags:
+      - Glossaries
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create glossary
+      tags:
+      - Glossaries
+      parameters: []
+      responses:
+        '201':
+          description: created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                source_language_code:
+                  type: string
+                target_language_code:
+                  type: string
+              required:
+              - source_language_code
+              - target_language_code
+  "/glossaries/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show glossary
+      tags:
+      - Glossaries
+      responses:
+        '200':
+          description: Successful
+        '404':
+          description: Not found
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000

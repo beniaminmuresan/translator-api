@@ -48,12 +48,15 @@ group :development, :test do
   gem 'rswag'
   # Rspec + useful gems for testing
   gem 'database_cleaner'
-  gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'rspec-json_expectations'
   gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
+  # Mock Data
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do

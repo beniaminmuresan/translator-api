@@ -26,6 +26,9 @@ Layout/LineLength:
     - 'spec/**/*'
     - 'lib/tasks/**/*'
     - 'bin/bundle'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
 
 Style/SignalException:
   Enabled: false
