@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :term do
-    source_term { 'source term' }
-    target_term { 'target term' }
+    source_term { Faker::Verb.base }
+    target_term { Faker::Verb.base }
     association :glossary
   end
 end

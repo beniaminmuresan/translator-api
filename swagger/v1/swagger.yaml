@@ -79,6 +79,50 @@ paths:
               required:
               - source_term
               - target_term
+  "/translations":
+    post:
+      summary: create translation
+      tags:
+      - Translations
+      parameters: []
+      responses:
+        '201':
+          description: created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                source_language_code:
+                  type: string
+                target_language_code:
+                  type: string
+                source_text:
+                  type: string
+                glossary_id:
+                  type: integer
+              required:
+              - source_language_code
+              - target_language_code
+              - source_text
+  "/translations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show translation
+      tags:
+      - Translations
+      responses:
+        '200':
+          description: Successful
+        '404':
+          description: Not found
 servers:
 - url: http://{defaultHost}
   variables:
